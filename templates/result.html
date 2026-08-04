@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAgro Results</title>
+
+    <!-- ✅ Link your CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="result-title">🌾 SmartAgro - Prediction Result</h1>
+
+        <div class="result-box">
+            {% if image_path %}
+                <img src="{{ url_for('static', filename='uploads/' + image_path) }}" 
+                     alt="Uploaded Image" class="uploaded-img">
+            {% endif %}
+
+            <h2>{{ prediction_text }}</h2>
+              {% if cause_text %}
+              <div class="disease-info">
+                  <h3>🌿 Disease Details</h3>
+                  <p><strong>Cause:</strong> {{ cause_text }}</p>
+                  <p><strong>Prevention:</strong> {{ prevention_text }}</p>
+                  <p><strong>Cure:</strong> {{ cure_text }}</p>
+              </div>
+              {% endif %}
+ 
+            {% if explanation_text %}
+                <p class="fertilizer-tip">💡 {{ explanation_text }}</p>
+            {% endif %}
+        </div>
+
+        {% if temperature %}
+        <div class="weather-info">
+            <h5>🌦 Weather Information</h5>
+            <p>Temperature: {{ temperature }} °C | Humidity: {{ humidity }}% | Rainfall: {{ rainfall }} mm</p>
+            <p>Season: {{ season }}</p>
+        </div>
+        {% endif %}
+
+        <a href="/" class="btn-home">🏡 Back to Home</a>
+    </div>
+</body>
+</html>

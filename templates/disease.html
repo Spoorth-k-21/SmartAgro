@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disease Prediction | SmartAgro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="disease-page">
+  <div class="container">
+    <h1>🍂 Plant Disease Prediction</h1>
+    <p class="subtitle">Upload a leaf image to identify plant diseases</p>
+
+    <form action="{{ url_for('predict_disease') }}" method="POST" enctype="multipart/form-data">
+      <label>Choose a leaf image:</label>
+      <input type="file" name="file" accept="image/*" required>
+      <button type="submit">🔍 Predict Disease</button>
+    </form>
+
+    <div class="footer">
+      <p><a href="/">🏠 Back to Home</a></p>
+    </div>
+  </div>
+</body>
+</html>

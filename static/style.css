@@ -1,0 +1,154 @@
+/* 🌿 SmartAgro Global Style */
+
+body {
+    background-image: url(field.jpg)
+        no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #1a2e05;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center content container */
+.container {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 60px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    max-width: 750px;
+    text-align: center;
+}
+
+/* Title */
+.result-title {
+    text-align: center;
+    color: #2e7d32;
+    font-weight: 700;
+    font-size: 1.9rem;
+    margin-bottom: 25px;
+}
+
+/* Prediction box */
+.result-box {
+    padding: 20px;
+    border: 2px solid #a5d6a7;
+    border-radius: 15px;
+    background-color: #f1f8e9;
+    transition: 0.3s ease-in-out;
+}
+
+.result-box:hover {
+    transform: scale(1.02);
+}
+
+/* Texts */
+.result-box h2 {
+    font-weight: 600;
+    color: #1b5e20;
+    margin-top: 10px;
+}
+
+.fertilizer-tip {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #33691e;
+}
+
+/* Weather info */
+.weather-info {
+    margin-top: 30px;
+    background: #dcedc8;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #9ccc65;
+}
+
+/* Uploaded image preview */
+.uploaded-img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Home button */
+.btn-home {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+    background-color: #43a047;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.btn-home:hover {
+    background-color: #2e7d32;
+}
+
+/* 🌾 Reuse for all pages (crop.html, fertilizer.html, etc.) */
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 60px auto;
+    max-width: 700px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: 500;
+    color: #1b5e20;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border-radius: 8px;
+    border: 1px solid #9ccc65;
+    background: #f9fff9;
+}
+
+button {
+    width: 100%;
+    background-color: #388e3c;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #2e7d32;
+}
+.disease-info {
+    background: #f4fff4;
+    border-left: 5px solid #2e7d32;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 100, 0, 0.15);
+}
+
+.disease-info h3 {
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.disease-info p {
+    color: #2e2e2e;
+    font-size: 1rem;
+    margin: 8px 0;
+}

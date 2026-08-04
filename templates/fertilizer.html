@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertilizer Recommendation | SmartAgro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 Fertilizer Recommendation</h1>
+    <p class="subtitle">Enter soil and crop details to get the right fertilizer</p>
+
+    <form action="{{ url_for('predict_fertilizer') }}" method="POST">
+      <label>Temperature (°C)</label>
+      <input type="number" name="temperature" step="any" required>
+        <br><br>
+      <label>Humidity (%)</label>
+      <input type="number" name="humidity" step="any" required>
+        <br><br>
+      <label>Moisture (%)</label>
+      <input type="number" name="moisture" step="any" required>
+        <br><br>
+      <label>Soil Type</label>
+      <select name="soil" required>
+        <option value="">-- Select Soil Type --</option>
+        <option value="Sandy">Sandy</option>
+        <option value="Loamy">Loamy</option>
+        <option value="Clayey">Clayey</option>
+        <option value="Black">Black</option>
+        <option value="Red">Red</option>
+      </select>
+      <br><br>
+      <label>Crop Type</label>
+      <select name="crop" required>
+        <option value="">-- Select Crop Type --</option>
+        <option value="Wheat">Wheat</option>
+        <option value="Rice">Rice</option>
+        <option value="Maize">Maize</option>
+        <option value="Sugarcane">Sugarcane</option>
+        <option value="Cotton">Cotton</option>
+        <option value="Tobacco">Tobacco</option>
+      </select>
+      <br><br>
+      <label>Nitrogen (N)</label>
+      <input type="number" name="nitrogen" step="any" required>
+      <br><br>
+      <label>Phosphorus (P)</label>
+      <input type="number" name="phosphorus" step="any" required>
+      <br><br>
+      <label>Potassium (K)</label>
+      <input type="number" name="potassium" step="any" required>
+      <br><br>
+      <button type="submit">🔍 Predict Fertilizer</button>
+      <br><br>
+    </form>
+
+    <div class="footer">
+      <p><a href="/">🏠 Back to Home</a></p>
+    </div>
+  </div>
+</body>
+</html>

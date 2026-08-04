@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation | SmartAgro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="fade-in">
+    <div class="container">
+        <h1>🌾 Crop Recommendation</h1>
+        <p>Enter your soil and weather details below to get the best crop suggestion for your region.</p>
+
+        <form action="{{ url_for('predict_crop') }}" method="POST" class="form-card">
+            <div class="form-group">
+                <label for="N">Nitrogen (N):</label>
+                <input type="number" name="N" required step="0.1" placeholder="e.g., 90">
+            </div>
+            <div class="form-group">
+                <label for="P">Phosphorus (P):</label>
+                <input type="number" name="P" required step="0.1" placeholder="e.g., 42">
+            </div>
+            <div class="form-group">
+                <label for="K">Potassium (K):</label>
+                <input type="number" name="K" required step="0.1" placeholder="e.g., 43">
+            </div>
+            <div class="form-group">
+                <label for="ph">pH Value:</label>
+                <input type="number" name="ph" required step="0.1" placeholder="e.g., 6.5">
+            </div>
+            <div class="form-group">
+                <label for="city">City Name:</label>
+                <input type="text" name="city" required placeholder="e.g., Bengaluru">
+            </div>
+            <div class="form-group">
+                <label for="season">Season:</label>
+                <select name="season" required>
+                    <option value="Kharif">Kharif</option>
+                    <option value="Rabi">Rabi</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Monsoon">Monsoon</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Get Recommendation</button>
+        </form>
+
+        <a href="/" class="back-home">← Back to Home</a>
+    </div>
+</body>
+</html>
