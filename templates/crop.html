@@ -1,51 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crop Recommendation | SmartAgro</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="fade-in">
-    <div class="container">
+
+<body>
+
+    <!-- Navbar -->
+
+    <header>
+
+        <div class="logo">
+            🌱 SmartAgro
+        </div>
+
+        <nav>
+
+            <a href="/">Home</a>
+            <a href="/crop" class="active">Crop</a>
+            <a href="/fertilizer">Fertilizer</a>
+            <a href="/disease">Disease</a>
+
+        </nav>
+
+    </header>
+
+    <!-- Hero -->
+
+    <section class="page-header">
+
         <h1>🌾 Crop Recommendation</h1>
-        <p>Enter your soil and weather details below to get the best crop suggestion for your region.</p>
 
-        <form action="{{ url_for('predict_crop') }}" method="POST" class="form-card">
-            <div class="form-group">
-                <label for="N">Nitrogen (N):</label>
-                <input type="number" name="N" required step="0.1" placeholder="e.g., 90">
-            </div>
-            <div class="form-group">
-                <label for="P">Phosphorus (P):</label>
-                <input type="number" name="P" required step="0.1" placeholder="e.g., 42">
-            </div>
-            <div class="form-group">
-                <label for="K">Potassium (K):</label>
-                <input type="number" name="K" required step="0.1" placeholder="e.g., 43">
-            </div>
-            <div class="form-group">
-                <label for="ph">pH Value:</label>
-                <input type="number" name="ph" required step="0.1" placeholder="e.g., 6.5">
-            </div>
-            <div class="form-group">
-                <label for="city">City Name:</label>
-                <input type="text" name="city" required placeholder="e.g., Bengaluru">
-            </div>
-            <div class="form-group">
-                <label for="season">Season:</label>
-                <select name="season" required>
-                    <option value="Kharif">Kharif</option>
-                    <option value="Rabi">Rabi</option>
-                    <option value="Summer">Summer</option>
-                    <option value="Winter">Winter</option>
-                    <option value="Monsoon">Monsoon</option>
-                </select>
-            </div>
-            <button type="submit" class="btn">Get Recommendation</button>
-        </form>
+        <p>
+            Predict the most suitable crop using AI based on your
+            soil nutrients, weather conditions and season.
+        </p>
 
-        <a href="/" class="back-home">← Back to Home</a>
+    </section>
+
+    <!-- Form Card -->
+
+    <section class="form-section">
+
+        <div class="glass-card">
+
+            <form action="{{ url_for('predict_crop') }}" method="POST">
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label><i class="fa-solid fa-seedling"></i> Nitrogen (N)</label>
+                        <input type="number" name="N" step="0.1" placeholder="e.g. 90" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label><i class="fa-solid fa-flask"></i> Phosphorus (P)</label>
+                        <input type="number" name="P" step="0.1" placeholder="e.g. 42" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label><i class="fa-solid fa-vial"></i> Potassium (K)</label>
+                        <input type="number" name="K" step="0.1" placeholder="e.g. 43" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label><i class="fa-solid fa-water"></i> Soil pH</label>
+                        <input type="number" name="ph" step="0.1" placeholder="e.g. 6.5" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label><i class="fa-solid fa-location-dot"></i> City</label>
+                        <input type="text" name="city" placeholder="e.g. Bengaluru" required>
+                    </div>
+
+                    <div class="input-box">
+
+                        <label><i class="fa-solid fa-cloud-sun"></i> Season</label>
+
+                        <select name="season" required>
+
+                            <option value="">Select Season</option>
+
+                            <option>Kharif</option>
+
+                            <option>Rabi</option>
+
+                            <option>Summer</option>
+
+                            <option>Winter</option>
+
+                            <option>Monsoon</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <button class="predict-btn">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Predict Best Crop
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Information -->
+
+    <section class="info-section">
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>AI Powered Prediction</h3>
+
+            <p>
+
+                Uses Machine Learning to recommend the most suitable
+                crop for your soil and climate.
+
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-cloud-rain"></i>
+
+            <h3>Weather Integration</h3>
+
+            <p>
+
+                Automatically fetches weather conditions using
+                your city.
+
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h3>High Accuracy</h3>
+
+            <p>
+
+                Random Forest model trained on agricultural
+                datasets with excellent prediction accuracy.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <div class="back-home">
+
+        <a href="/">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Dashboard
+
+        </a>
+
     </div>
+
 </body>
+
 </html>

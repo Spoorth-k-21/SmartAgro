@@ -1,21 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartAgro | Home</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-  <div class="container">
-    <h1>🌾 SmartAgro</h1>
-    <p class="subtitle">Your intelligent assistant for modern agriculture</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAgro | AI Smart Agriculture</title>
 
-    <div class="nav-buttons">
-      <a href="/crop">🌱 Crop Recommendation</a><br><br>
-      <a href="/fertilizer">🧪 Fertilizer Recommendation</a><br><br>
-      <a href="/disease">🍂 Disease Prediction</a><br><br>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <div class="logo">
+        🌱 SmartAgro
     </div>
-  </div>
+
+    <nav>
+
+        <a href="/">Home</a>
+        <a href="/crop">Crop</a>
+        <a href="/fertilizer">Fertilizer</a>
+        <a href="/disease">Disease</a>
+
+    </nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            AI Powered Smart Agriculture
+        </h1>
+
+        <p>
+
+            Helping farmers make better agricultural decisions using
+            Artificial Intelligence, Machine Learning and Deep Learning.
+
+        </p>
+
+        <a href="/crop" class="btn">
+
+            Get Started
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <h2>Our AI Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-seedling"></i>
+
+            <h3>Crop Recommendation</h3>
+
+            <p>
+
+                Predict the best crop using soil nutrients,
+                pH and live weather information.
+
+            </p>
+
+            <a href="/crop">Explore →</a>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-flask"></i>
+
+            <h3>Fertilizer Recommendation</h3>
+
+            <p>
+
+                Get fertilizer suggestions based on
+                crop type and soil condition.
+
+            </p>
+
+            <a href="/fertilizer">Explore →</a>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-leaf"></i>
+
+            <h3>Disease Detection</h3>
+
+            <p>
+
+                Upload plant leaf images and let AI
+                detect diseases instantly.
+
+            </p>
+
+            <a href="/disease">Explore →</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <h1>99%</h1>
+
+        <p>Crop Prediction Accuracy</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h1>98%</h1>
+
+        <p>Disease Detection Accuracy</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h1>97%</h1>
+
+        <p>Fertilizer Recommendation</p>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about">
+
+    <h2>Why SmartAgro?</h2>
+
+    <p>
+
+        SmartAgro is an AI-powered agriculture platform that helps farmers
+        choose the right crops, fertilizers and identify plant diseases
+        using Machine Learning and Deep Learning technologies.
+
+    </p>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>🌱 SmartAgro</h3>
+
+    <p>
+
+        AI Powered Smart Agriculture Assistant
+
+    </p>
+
+    <p>
+
+        Developed by <b>Spoorthi Konapur</b>
+
+    </p>
+
+</footer>
+
 </body>
 </html>

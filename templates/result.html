@@ -1,48 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartAgro Results</title>
+    <title>Prediction Result | SmartAgro</title>
 
-    <!-- ✅ Link your CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="result-title">🌾 SmartAgro - Prediction Result</h1>
 
-        <div class="result-box">
-            {% if image_path %}
-                <img src="{{ url_for('static', filename='uploads/' + image_path) }}" 
-                     alt="Uploaded Image" class="uploaded-img">
-            {% endif %}
+<header>
 
-            <h2>{{ prediction_text }}</h2>
-              {% if cause_text %}
-              <div class="disease-info">
-                  <h3>🌿 Disease Details</h3>
-                  <p><strong>Cause:</strong> {{ cause_text }}</p>
-                  <p><strong>Prevention:</strong> {{ prevention_text }}</p>
-                  <p><strong>Cure:</strong> {{ cure_text }}</p>
-              </div>
-              {% endif %}
- 
-            {% if explanation_text %}
-                <p class="fertilizer-tip">💡 {{ explanation_text }}</p>
-            {% endif %}
-        </div>
-
-        {% if temperature %}
-        <div class="weather-info">
-            <h5>🌦 Weather Information</h5>
-            <p>Temperature: {{ temperature }} °C | Humidity: {{ humidity }}% | Rainfall: {{ rainfall }} mm</p>
-            <p>Season: {{ season }}</p>
-        </div>
-        {% endif %}
-
-        <a href="/" class="btn-home">🏡 Back to Home</a>
+    <div class="logo">
+        🌱 SmartAgro
     </div>
+
+    <nav>
+
+        <a href="/">Home</a>
+        <a href="/crop">Crop</a>
+        <a href="/fertilizer">Fertilizer</a>
+        <a href="/disease">Disease</a>
+
+    </nav>
+
+</header>
+
+<section class="page-header">
+
+    <h1>
+        🎉 AI Prediction Result
+    </h1>
+
+    <p>
+
+        SmartAgro has analyzed your input successfully.
+
+    </p>
+
+</section>
+
+<section class="result-section">
+
+<div class="glass-card result-card">
+
+{% if image_path %}
+
+<img
+src="{{ url_for('static', filename='uploads/' + image_path) }}"
+class="uploaded-img"
+alt="Leaf Image">
+
+{% endif %}
+
+<div class="success-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<h2>
+
+{{ prediction_text }}
+
+</h2>
+
+{% if explanation_text %}
+
+<div class="result-info">
+
+<h3>
+
+🧪 Recommendation
+
+</h3>
+
+<p>
+
+{{ explanation_text }}
+
+</p>
+
+</div>
+
+{% endif %}
+
+{% if cause_text %}
+
+<div class="result-info">
+
+<h3>
+
+🌿 Disease Details
+
+</h3>
+
+<p>
+
+<strong>Cause</strong><br>
+
+{{ cause_text }}
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Prevention</strong><br>
+
+{{ prevention_text }}
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Cure</strong><br>
+
+{{ cure_text }}
+
+</p>
+
+</div>
+
+{% endif %}
+
+{% if temperature %}
+
+<div class="weather-card">
+
+<h3>
+
+🌦 Weather Information
+
+</h3>
+
+<div class="weather-grid">
+
+<div>
+
+<i class="fa-solid fa-temperature-half"></i>
+
+<h4>{{ temperature }}°C</h4>
+
+<p>Temperature</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-droplet"></i>
+
+<h4>{{ humidity }}%</h4>
+
+<p>Humidity</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-cloud-rain"></i>
+
+<h4>{{ rainfall }}</h4>
+
+<p>Rainfall (mm)</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-calendar"></i>
+
+<h4>{{ season }}</h4>
+
+<p>Season</p>
+
+</div>
+
+</div>
+
+</div>
+
+{% endif %}
+
+<div class="action-buttons">
+
+<a href="/" class="btn-home">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a href="/crop" class="btn-secondary">
+
+🌾 Crop
+
+</a>
+
+<a href="/fertilizer" class="btn-secondary">
+
+🧪 Fertilizer
+
+</a>
+
+<a href="/disease" class="btn-secondary">
+
+🍃 Disease
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>
+
+🌱 SmartAgro
+
+</h3>
+
+<p>
+
+AI Powered Smart Agriculture Assistant
+
+</p>
+
+<p>
+
+Developed by <b>Spoorthi Konapur</b>
+
+</p>
+
+</footer>
+
 </body>
+
 </html>

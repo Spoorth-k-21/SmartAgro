@@ -1,25 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Disease Prediction | SmartAgro</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection | SmartAgro</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="disease-page">
-  <div class="container">
-    <h1>🍂 Plant Disease Prediction</h1>
-    <p class="subtitle">Upload a leaf image to identify plant diseases</p>
 
-    <form action="{{ url_for('predict_disease') }}" method="POST" enctype="multipart/form-data">
-      <label>Choose a leaf image:</label>
-      <input type="file" name="file" accept="image/*" required>
-      <button type="submit">🔍 Predict Disease</button>
-    </form>
+<body>
 
-    <div class="footer">
-      <p><a href="/">🏠 Back to Home</a></p>
+    <!-- Navbar -->
+
+    <header>
+
+        <div class="logo">
+            🌱 SmartAgro
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/crop">Crop</a>
+            <a href="/fertilizer">Fertilizer</a>
+            <a href="/disease" class="active">Disease</a>
+        </nav>
+
+    </header>
+
+    <!-- Hero -->
+
+    <section class="page-header">
+
+        <h1>🍃 Plant Disease Detection</h1>
+
+        <p>
+
+            Upload a leaf image and let Artificial Intelligence
+            identify plant diseases instantly.
+
+        </p>
+
+    </section>
+
+    <!-- Upload Card -->
+
+    <section class="form-section">
+
+        <div class="glass-card upload-card">
+
+            <i class="fa-solid fa-leaf upload-icon"></i>
+
+            <h2>Upload Leaf Image</h2>
+
+            <p>
+                Supported formats: JPG, JPEG, PNG
+            </p>
+
+            <form action="{{ url_for('predict_disease') }}"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <label class="upload-label">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    Choose Image
+
+                    <input
+                        type="file"
+                        name="file"
+                        accept="image/*"
+                        required>
+
+                </label>
+
+                <button type="submit" class="predict-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Detect Disease
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+
+    <section class="info-section">
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>Deep Learning Model</h3>
+
+            <p>
+
+                CNN model trained using thousands of
+                plant leaf images.
+
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Instant Prediction</h3>
+
+            <p>
+
+                Detect diseases within seconds
+                after uploading the image.
+
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-notes-medical"></i>
+
+            <h3>Treatment Suggestions</h3>
+
+            <p>
+
+                View causes, prevention methods
+                and recommended treatments.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Back Button -->
+
+    <div class="back-home">
+
+        <a href="/">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Dashboard
+
+        </a>
+
     </div>
-  </div>
+
 </body>
+
 </html>
